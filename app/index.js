@@ -3,6 +3,7 @@ var util = require('util');
 var path = require('path');
 var yeoman = require('yeoman-generator');
 var chalk = require('chalk');
+var sh = require('execSync');
 
 
 var WagtailGenerator = yeoman.generators.Base.extend({
@@ -10,6 +11,7 @@ var WagtailGenerator = yeoman.generators.Base.extend({
     this.pkg = require('../package.json');
 
     this.on('end', function () {
+      sh.run('chmod +x manage.py');
       console.log('All done! Make sure you\'re in a virtualenv then `pip install -r requirements/base.txt`');
     });
   },

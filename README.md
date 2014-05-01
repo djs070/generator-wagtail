@@ -4,7 +4,7 @@
 
 ## TODO
 
-- [ ] chmod +x manage.py
+- [x] chmod +x manage.py
 - [ ] configurable database
 - [ ] optionally install wagtail demo app
 - [ ] include some skeleton templates
