@@ -4,7 +4,7 @@
   "description": "Yeoman generator",
   "license": "MIT",
   "main": "app/index.js",
-  "repository": "precise54/generator-wagtail",
+  "repository": "http://github.com/precise54/generator-wagtail",
   "author": {
     "name": "David Smith",
     "email": "djs070@gmail.com",
