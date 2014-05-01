@@ -4,11 +4,11 @@
 
 ## TODO
 
-[] chmod +x manage.py
-[] configurable database
-[] optionally install wagtail demo app
-[] include some skeleton templates
-[] tests
+- [ ] chmod +x manage.py
+- [ ] configurable database
+- [ ] optionally install wagtail demo app
+- [ ] include some skeleton templates
+- [ ] tests
 
 ## Getting Started
 
