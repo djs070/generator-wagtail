@@ -1,9 +1,10 @@
 # generator-wagtail [![Build Status](https://secure.travis-ci.org/precise54/generator-wagtail.png?branch=master)](https://travis-ci.org/precise54/generator-wagtail)
 
-> [Yeoman](http://yeoman.io) generator for new [Wagtail CMS](http://www.github.com/torchbox/wagtail) project
+> [Yeoman](http://yeoman.io) generator for the amazing [Wagtail CMS](http://www.github.com/torchbox/wagtail) project
 
 ## TODO
 
+- [ ] better instructions for setting up environment
 - [x] chmod +x manage.py
 - [ ] configurable database
 - [ ] optionally install wagtail demo app
@@ -26,9 +27,7 @@ Not every new computer comes with a Yeoman pre-installed. He lives in the [npm](
 $ npm install -g yo
 ```
 
-### Yeoman Generators
-
-Yeoman travels light. He didn't pack any generators when he moved in. You can think of a generator like a plug-in. You get to choose what type of application you wish to create, such as a Backbone application or even a Chrome extension.
+### Wagtail generator
 
 To install generator-wagtail from npm, run:
 
@@ -42,12 +41,11 @@ Finally, initiate the generator:
 $ yo wagtail
 ```
 
-### Getting To Know Yeoman
+Yeoman will ask you a few questions, then leave you with the base structure for a new Wagtail CMS project, on an sqlite database by default.
 
-Yeoman has a heart of gold. He's a person with feelings and opinions, but he's very easy to work with. If you think he's too opinionated, he can be easily convinced.
+## Attribution
 
-If you'd like to get to know Yeoman better and meet some of his friends, [Grunt](http://gruntjs.com) and [Bower](http://bower.io), check out the complete [Getting Started Guide](https://github.com/yeoman/yeoman/wiki/Getting-Started).
-
+Full credit to the amazing team at [wagtail](http://wagtail.io) for creating such a beatiful CMS. Most settings have been adapted from [wagtail-demo](http://github.com/torchbox/wagtail-demo)
 
 ## License
 
