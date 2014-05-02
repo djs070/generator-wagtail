@@ -2,6 +2,8 @@
 
 > [Yeoman](http://yeoman.io) generator for the amazing [Wagtail CMS](http://www.github.com/torchbox/wagtail) project
 
+![](http://i.imgur.com/msvq1g5.png)
+
 ## TODO
 
 - [x] better instructions for setting up environment
@@ -12,7 +14,7 @@
 - [ ] more thorough tests
 
 ## Prerequisites
-- Python 2.7 & (hopefully) virtualenv
+- Python 2.7 & (hopefully) virtualenv + virtualenvwrapper
 
 ## Getting Started
 
