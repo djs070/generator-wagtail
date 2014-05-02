@@ -9,7 +9,10 @@
 - [ ] configurable database
 - [ ] optionally install wagtail demo app
 - [ ] include some skeleton templates
-- [ ] tests
+- [ ] more thorough tests
+
+## Prerequisites
+- Python 2.7 & (hopefully) virtualenv
 
 ## Getting Started
 
