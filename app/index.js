@@ -40,7 +40,7 @@ var WagtailGenerator = yeoman.generators.Base.extend({
 
       var secretKey = "";
       var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+-_$%#*!()";
-      for( var i=0; i < 32; i++ ) {
+      for( var i=0; i < 50; i++ ) {
         secretKey += possible.charAt(Math.floor(Math.random() * possible.length));
       }
       this.secretKey = secretKey;
