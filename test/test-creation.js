@@ -18,14 +18,29 @@ describe('wagtail generator', function () {
   });
 
   it('creates expected files', function (done) {
+    var projectName = "myproj";
+    var appName = "myapp";
     var expected = [
-      // add files you expect to exist here.
-      '.jshintrc',
-      '.editorconfig'
+      'manage.py',
+      'requirements/base.txt',
+      'requirements/dev.txt',
+      'requirements/production.txt',
+      projectName + '/__init__.py',
+      projectName + '/urls.py',
+      projectName + '/wsgi.py',
+      projectName + '/wsgi_production.py',
+      projectName + '/settings/__init__.py',
+      projectName + '/settings/base.py',
+      projectName + '/settings/dev.py',
+      projectName + '/settings/local.py.example',
+      projectName + '/settings/production.py',
+      appName + '/__init__.py',
+      appName + '/models.py'
     ];
 
     helpers.mockPrompt(this.app, {
-      'someOption': true
+      'projectName': projectName,
+      "appName": appName
     });
     this.app.options['skip-install'] = true;
     this.app.run({}, function () {
