@@ -4,7 +4,7 @@
 
 ## TODO
 
-- [ ] better instructions for setting up environment
+- [x] better instructions for setting up environment
 - [x] chmod +x manage.py
 - [ ] configurable database
 - [ ] optionally install wagtail demo app
