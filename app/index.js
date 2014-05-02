@@ -12,7 +12,15 @@ var WagtailGenerator = yeoman.generators.Base.extend({
 
     this.on('end', function () {
       sh.run('chmod +x manage.py');
-      console.log('All done! Make sure you\'re in a virtualenv then `pip install -r requirements/base.txt`');
+      console.log('All done!');
+      console.log('Where to from here?');
+      console.log('- Make sure you\'re in a virtualenv then `pip install -r requirements/base.txt`');
+      console.log('- Optionally edit your project settings, app models etc');
+      console.log('- Create the database and superuser with ./manage.py syncdb');
+      console.log('- Migrate with ./manage.py migratedb');
+      console.log('- Run the development server with ./manage.py runserver');
+      console.log('\t then visit your site at http://127.0.0.1:8000,');
+      console.log('\t and login at http://127.0.0.1:8000/admin');
     });
   },
 
