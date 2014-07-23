@@ -10,8 +10,9 @@
 - [x] chmod +x manage.py
 - [ ] configurable database
 - [ ] optionally install wagtail demo app
-- [ ] include some skeleton templates
+- [ ] Update to wagtail 1.4
 - [ ] more thorough tests
+- [ ] subgenerators
 
 ## Prerequisites
 - Python 2.7 & (hopefully) virtualenv + virtualenvwrapper
