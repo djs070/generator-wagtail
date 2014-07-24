@@ -43,7 +43,7 @@ var WagtailGenerator = yeoman.generators.Base.extend({
 
       var secretKey = "";
       var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+-_$%#*!()";
-      for( var i=0; i < 50; i++ ) {
+      for (var i = 0; i < 50; i++) {
         secretKey += possible.charAt(Math.floor(Math.random() * possible.length));
       }
       this.secretKey = secretKey;
@@ -52,7 +52,7 @@ var WagtailGenerator = yeoman.generators.Base.extend({
   },
 
   // Create the django project directory and files
-  createProject: function(){
+  createProject: function() {
     // Copy contents of requirements directory and other helper files
     this.directoy('docs');  // todo template
     this.directoy('vagrant');
@@ -77,15 +77,15 @@ var WagtailGenerator = yeoman.generators.Base.extend({
     this.template('app/_wsgi.py', appDir + '/wsgi.py'); // todo template
 
     // Static dir
-    var staticDir = projectName + '/static';
+    var staticDir = this.projectName + '/static';
     this.mkdir(staticDir);
     this.mkdir(staticDir + '/css');
     this.mkdir(staticDir + '/js');
-    this.copy('static/project.css', staticDir + '/css/' + projectName + '.scss')
-    this.copy('static/project.js', staticDir + '/js/' + projectName + '.js')
+    this.copy('static/project.css', staticDir + '/css/' + this.projectName + '.scss');
+    this.copy('static/project.js', staticDir + '/js/' + this.projectName + '.js');
 
     // Templates dir
-    var templatesDir = projectName + '/templates';
+    var templatesDir = this.projectName + '/templates';
     this.mkdir(templatesDir);
     this.copy('templates/404.html', templatesDir + '/404.html');
     this.copy('templates/500.html', templatesDir + '/500.html');
