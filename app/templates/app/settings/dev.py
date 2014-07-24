@@ -1,13 +1,15 @@
 from .base import *
 
+
 DEBUG = True
+TEMPLATE_DEBUG = True
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-# BASE_URL required for notification emails
-BASE_URL = 'http://localhost:8111'
+CELERY_ALWAYS_EAGER = True
+
 
 try:
-	from .local import *
+    from .local import *
 except ImportError:
-	pass
+    pass
