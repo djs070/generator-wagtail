@@ -15,7 +15,7 @@
 
         {% compress css %}
             
-            <link rel="stylesheet" type="text/x-scss" href="{% static 'css/my_lovely_website.scss' %}">
+            <link rel="stylesheet" type="text/x-scss" href="{% static 'css/<%= projectName %>.scss' %}">
         {% endcompress %}
 
         {% block extra_css %}
@@ -30,7 +30,7 @@
 
         {% compress js %}
             
-            <script type="text/javascript" src="{% static 'js/my_lovely_website.js' %}"></script>
+            <script type="text/javascript" src="{% static 'js/<%= projectName %>.js' %}"></script>
         {% endcompress %}
 
         {% block extra_js %}

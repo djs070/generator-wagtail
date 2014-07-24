@@ -13,10 +13,10 @@ Vagrant::Config.run do |config|
     # Share an additional folder to the guest VM. The first argument is
     # an identifier, the second is the path on the guest to mount the
     # folder, and the third is the path on the host to the actual folder.
-    config.vm.share_folder "project", "/home/vagrant/my_lovely_website", "."
+    config.vm.share_folder "project", "/home/vagrant/<%= projectName %>", "."
 
     # Enable provisioning with a shell script.
-    config.vm.provision :shell, :path => "vagrant/provision.sh", :args => "my_lovely_website"
+    config.vm.provision :shell, :path => "vagrant/provision.sh", :args => "<%= projectName %>"
 
     # If a 'Vagrantfile.local' file exists, import any configuration settings
     # defined there into here. Vagrantfile.local is ignored in version control,

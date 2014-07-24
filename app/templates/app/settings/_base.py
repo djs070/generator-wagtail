@@ -1,5 +1,5 @@
 """
-Django settings for my_lovely_website project.
+Django settings for <%= projectName %> project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.6/topics/settings/
@@ -90,7 +90,7 @@ WSGI_APPLICATION = SITE_NAME + '.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'my_lovely_website',
+        'NAME': '<%= projectName %>',
         'USER': 'postgres',
         'PASSWORD': '',
         'HOST': '',  # Set to empty string for localhost.
@@ -176,7 +176,7 @@ CACHES = {
     'default': {
         'BACKEND': 'redis_cache.cache.RedisCache',
         'LOCATION': '127.0.0.1:6379',
-        'KEY_PREFIX': 'my_lovely_website',
+        'KEY_PREFIX': '<%= projectName %>',
         'OPTIONS': {
             'CLIENT_CLASS': 'redis_cache.client.DefaultClient',
         }
@@ -189,12 +189,12 @@ CACHES = {
 LOGIN_URL = 'wagtailadmin_login'
 LOGIN_REDIRECT_URL = 'wagtailadmin_home'
 
-WAGTAIL_SITE_NAME = "my_lovely_website"
+WAGTAIL_SITE_NAME = "<%= projectName %>"
 
 # Use Elasticsearch as the search backend for extra performance and better search results
 WAGTAILSEARCH_BACKENDS = {
     'default': {
         'BACKEND': 'wagtail.wagtailsearch.backends.elasticsearch.ElasticSearch',
-        'INDEX': 'my_lovely_website',
+        'INDEX': '<%= projectName %>',
     },
 }

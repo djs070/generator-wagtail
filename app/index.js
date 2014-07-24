@@ -52,15 +52,23 @@ var WagtailGenerator = yeoman.generators.Base.extend({
   },
 
   // Create the django project directory and files
-  createProject: function() {
+  createProject: function () {
     // Copy contents of requirements directory and other helper files
-    this.directory('docs');  // todo template
+    this.mkdir('docs');
+    this.copy('docs/__init__.py', 'docs/__init__.py');
+    this.template('docs/_conf.py', 'docs/conf.py');
+    this.copy('docs/deploy.rst', 'docs/deploy.rst');
+    this.template('docs/_index.rst', 'docs/index.rst');
+    this.copy('docs/install.rst', 'docs/install.rst');
+    this.copy('docs/make.bat', 'docs/make.bat');
+    this.copy('docs/Makefile', 'docs/Makefile');
+
     this.directory('vagrant');
     this.copy('gitignore', '.gitignore');
-    this.copy('fabfile.py'); // todo template
-    this.template('_readme.rst', 'readme.rst'); // todo template
+    this.template('_fabfile.py', 'fabfile.py');
+    this.template('_readme.rst', 'readme.rst');
     this.copy('requirements.txt');
-    this.template('_Vagrantfile', 'Vagrantfile'); // todo template
+    this.template('_Vagrantfile', 'Vagrantfile');
 
     // Create the project module
     this.mkdir(this.projectName);
@@ -78,7 +86,11 @@ var WagtailGenerator = yeoman.generators.Base.extend({
     this.copy('__init__.py', appDir + '/__init__.py');
     this.copy('app/urls.py', appDir + '/urls.py');
     this.template('app/_wsgi.py', appDir + '/wsgi.py'); // todo template
-    this.directory('app/settings', appDir + '/settings')
+    this.mkdir(appDir + '/settings');
+    this.copy('app/settings/__init__.py', appDir + '/settings/__init__.py');
+    this.template('app/settings/_base.py', appDir + '/settings/base.py');
+    this.copy('app/settings/dev.py', appDir + '/settings/dev.py');
+    this.copy('app/settings/production.py', appDir + '/settings/production.py');
 
     // Static dir
     var staticDir = this.projectName + '/static';

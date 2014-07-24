@@ -1,5 +1,5 @@
 
 
 ==================
-my_lovely_website
+<%= projectName %>
 ==================
