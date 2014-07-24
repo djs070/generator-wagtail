@@ -29,7 +29,7 @@ path.append(DJANGO_ROOT)
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '-tf*4$)#t_bzbtd^1i9)&w&c(sy%v1^t*wl@%@+n54!34xxm%r'
+SECRET_KEY = '<%= secretKey %>'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
