@@ -1,6 +1,6 @@
 'use strict';
-var util = require('util');
-var path = require('path');
+// var util = require('util');
+// var path = require('path');
 var yeoman = require('yeoman-generator');
 var chalk = require('chalk');
 var sh = require('execSync');
@@ -14,13 +14,11 @@ var WagtailGenerator = yeoman.generators.Base.extend({
       sh.run('chmod +x ' + this.projectName + '/manage.py');
       console.log('All done!');
       console.log('Where to from here?');
-      console.log('- Make sure you\'re in a virtualenv then `pip install -r requirements/base.txt`');
-      console.log('- Optionally edit your project settings, app models etc');
-      console.log('- Create the database and superuser with ./manage.py syncdb');
-      console.log('- Migrate with ./manage.py migratedb');
-      console.log('- Run the development server with ./manage.py runserver');
-      console.log('\t then visit your site at http://127.0.0.1:8000,');
-      console.log('\t and login at http://127.0.0.1:8000/admin');
+
+      console.log('- `vagrant up` to provision your local vagrant box (may take quite some time to download the base box if this is your first run)');
+      console.log('- `vagrant ssh` to log in to your vagrant box');
+      console.log('- Once inside your vagrant box, `dj createsuperuser` to create an admin for your new site');
+      console.log('- `djrun` in your vagrant session, then visit http://localhost:8111 on your host browser to view your freshly-baked homepage!');
     });
   },
 
@@ -41,8 +39,8 @@ var WagtailGenerator = yeoman.generators.Base.extend({
     this.prompt(prompts, function (props) {
       this.projectName = props.projectName;
 
-      var secretKey = "";
-      var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+-_$%#*!()";
+      var secretKey = '';
+      var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+-_$%#*!()';
       for (var i = 0; i < 50; i++) {
         secretKey += possible.charAt(Math.floor(Math.random() * possible.length));
       }

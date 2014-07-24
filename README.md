@@ -16,8 +16,9 @@
 - [ ] subgenerators
 
 ## Prerequisites
-- ~~Python 2.7 & (hopefully) virtualenv + virtualenvwrapper~~
-- Node.js & Yeoman
+- ~~Python 2.7 & (hopefully) virtualenv + virtualenvwrapper~~ Not required on base machine, that's the point! Vagrant will set up a box with the correct version of everything installed.
+- Node.js
+- Vagrant
 
 ## Getting Started
 
@@ -49,7 +50,11 @@ Finally, initiate the generator:
 $ yo wagtail
 ```
 
-Yeoman will ask you a few questions, then leave you with the base structure for a new Wagtail CMS project, on an sqlite database by default.
+Yeoman will ask you a few questions, then leave you with the base structure for a new Wagtail CMS project. You will then want to:
+- `vagrant up` to provision your local vagrant box (may take quite some time to download the base box if this is your first run)
+- `vagrant ssh` to log in to your vagrant box
+- Once inside your vagrant box, `dj createsuperuser` to create an admin for your new site
+- `djrun` in your vagrant session, then visit http://localhost:8111 on your host browser to view your freshly-baked homepage!
 
 ## Attribution
 
