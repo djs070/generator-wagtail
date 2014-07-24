@@ -36,15 +36,10 @@ var WagtailGenerator = yeoman.generators.Base.extend({
     var prompts = [{
       name: 'projectName',
       message: 'What do you want to name your project (lowercase letters only)?'
-    },
-    {
-      name: 'appName',
-      message: 'What do you want to name the inital app (only a-z again)?'
     }];
 
     this.prompt(prompts, function (props) {
       this.projectName = props.projectName;
-      this.appName = props.appName;
 
       var secretKey = "";
       var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+-_$%#*!()";
@@ -59,44 +54,42 @@ var WagtailGenerator = yeoman.generators.Base.extend({
   // Create the django project directory and files
   createProject: function(){
     // Copy contents of requirements directory and other helper files
-    this.template('_manage.py', 'manage.py');
-    this.directory('requirements');
-    this.mkdir('static');
+    this.directoy('docs');  // todo template
+    this.directoy('vagrant');
+    this.copy('gitignore', '.gitignore');
+    this.copy('fabfile.py'); // todo template
+    this.copy('readme.rst'); // todo template
+    this.copy('requirements.txt');
+    this.copy('Vagrantfile'); // todo template
 
     // Create the project module
     this.mkdir(this.projectName);
-    this.copy('__init__.py', this.projectName + '/__init__.py');
-    this.copy('project/urls.py', this.projectName + '/urls.py');
+    this.template('project/_manage.py', 'manage.py');
 
-    // Settings
-    this.template('project/settings/_base.py', this.projectName + '/settings/base.py');
-    this.copy('project/settings/__init__.py', this.projectName + '/settings/__init__.py')
-    this.copy('project/settings/dev.py', this.projectName + '/settings/dev.py')
-    this.copy('project/settings/local.py.example', this.projectName + '/settings/local.py.example');
-    this.copy('project/settings/production.py', this.projectName + '/settings/production.py');
+    // Copy core app
+    this.directory('project/core', this.projectName + '/core');
 
-    // wsgi files
-    this.template('project/_wsgi.py', this.projectName + '/wsgi.py')
-    this.template('project/_wsgi_production.py', this.projectName + '/wsgi_production.py')
-  },
+    // Create our new custom app
+    var appDir = this.projectName + '/' + this.projectName;
+    this.mkdir(appDir);
+    this.copy('__init__.py', appDir + '/__init__.py');
+    this.copy('app/urls.py', appDir + '/urls.py');
+    this.template('app/_wsgi.py', appDir + '/wsgi.py'); // todo template
 
-  createApp: function () {
-    this.mkdir(this.appName);
-    this.copy('__init__.py', this.appName + '/__init__.py');
+    // Static dir
+    var staticDir = projectName + '/static';
+    this.mkdir(staticDir);
+    this.mkdir(staticDir + '/css');
+    this.mkdir(staticDir + '/js');
+    this.copy('static/project.css', staticDir + '/css/' + projectName + '.scss')
+    this.copy('static/project.js', staticDir + '/js/' + projectName + '.js')
 
-    this.template('app/_models.py', this.appName + '/models.py');
-
-    this.mkdir(this.appName + '/templates');
-    this.mkdir(this.appName + '/templates/' + this.appName);
-
-    this.mkdir(this.appName + '/fixtures');
-    this.mkdir(this.appName + '/migrations');
-
-    this.mkdir(this.appName + '/static');
-    this.mkdir(this.appName + '/static/css');
-    this.mkdir(this.appName + '/static/fonts');
-    this.mkdir(this.appName + '/static/images');
-    this.mkdir(this.appName + '/static/js');
+    // Templates dir
+    var templatesDir = projectName + '/templates';
+    this.mkdir(templatesDir);
+    this.copy('templates/404.html', templatesDir + '/404.html');
+    this.copy('templates/500.html', templatesDir + '/500.html');
+    this.template('templates/_base.html', templatesDir + '/base.html'); // Todo template
   }
 });
 

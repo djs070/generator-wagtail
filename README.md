@@ -8,14 +8,16 @@
 
 - [x] better instructions for setting up environment
 - [x] chmod +x manage.py
+- [x] Update to wagtail 1.4
+- [ ] default projectName to current dir name (replace dashes & toLower)
 - [ ] configurable database
-- [ ] optionally install wagtail demo app
-- [ ] Update to wagtail 1.4
+- [ ] optionally install wagtail demo app (or split to a new repo)
 - [ ] more thorough tests
 - [ ] subgenerators
 
 ## Prerequisites
-- Python 2.7 & (hopefully) virtualenv + virtualenvwrapper
+- ~~Python 2.7 & (hopefully) virtualenv + virtualenvwrapper~~
+- Node.js & Yeoman
 
 ## Getting Started
 
@@ -51,7 +53,7 @@ Yeoman will ask you a few questions, then leave you with the base structure for 
 
 ## Attribution
 
-Full credit to the amazing team at [wagtail](http://wagtail.io) for creating such a beatiful CMS. Most settings have been adapted from [wagtail-demo](http://github.com/torchbox/wagtail-demo)
+Full credit to the amazing team at [wagtail](http://wagtail.io) for creating such a beatiful CMS. Most settings have been adapted from [wagtail-template](http://github.com/torchbox/wagtail-template)
 
 ## License
 
