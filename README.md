@@ -1,6 +1,6 @@
 # generator-wagtail [![Build Status](https://secure.travis-ci.org/precise54/generator-wagtail.png?branch=master)](https://travis-ci.org/precise54/generator-wagtail)
 
-> [Yeoman](http://yeoman.io) generator for the amazing [Wagtail CMS](http://www.github.com/torchbox/wagtail) project
+> [Yeoman](http://yeoman.io) generator to get you up and running with a fresh copy of [Wagtail CMS](http://www.github.com/torchbox/wagtail), running in their official Vagrant box with all dependencies installed and ready to rock.
 
 ![](http://i.imgur.com/msvq1g5.png)
 
@@ -44,7 +44,7 @@ To install generator-wagtail from npm, run:
 $ npm install -g generator-wagtail
 ```
 
-Finally, initiate the generator:
+Finally, cd to your new project directory and initiate the generator:
 
 ```
 $ yo wagtail
