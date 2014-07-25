@@ -9,10 +9,10 @@
 - [x] better instructions for setting up environment
 - [x] chmod +x manage.py
 - [x] Update to wagtail 1.4
-- [ ] default projectName to current dir name (replace dashes & toLower)
+- [x] more thorough tests
+- [x] default projectName to current dir name (replace dashes & toLower)
 - [ ] configurable database
 - [ ] optionally install wagtail demo app (or split to a new repo)
-- [ ] more thorough tests
 - [ ] subgenerators
 
 ## Prerequisites
