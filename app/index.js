@@ -33,7 +33,8 @@ var WagtailGenerator = yeoman.generators.Base.extend({
 
     var prompts = [{
       name: 'projectName',
-      message: 'What do you want to name your project (lowercase letters only)?'
+      message: 'What do you want to name your project (lowercase letters only)?',
+      default: this.appname.replace(/[-\s]+/g, '_').toLowerCase();
     }];
 
     this.prompt(prompts, function (props) {
