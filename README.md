@@ -58,7 +58,7 @@ Yeoman will ask you a few questions, then leave you with the base structure for 
 
 ## Attribution
 
-Full credit to the amazing team at [wagtail](http://wagtail.io) for creating such a beatiful CMS. Most settings have been adapted from [wagtail-template](http://github.com/torchbox/wagtail-template)
+Full credit to the amazing team at [wagtail](http://wagtail.io) for creating such a beautiful CMS. Most settings have been adapted from [wagtail-template](http://github.com/torchbox/wagtail-template)
 
 ## License
 
